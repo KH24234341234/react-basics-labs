@@ -7,6 +7,7 @@ const Task = (props) => {
             <p>{props.children}</p>
             {/*new prop class created here, in same vein as title */}
             <p className ="description">{props.description}</p>  
+            <p className ="priority">{props.priority}</p>
         </div>
     )
 }
