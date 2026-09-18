@@ -19,6 +19,14 @@ function App() {
   }
 
 
+    const deleteHandler = (taskIndex) => {
+    const tasks = [...taskState.tasks];
+    tasks.splice(taskIndex, 1);
+    setTaskState({tasks});
+  } 
+
+
+
     
 
     return (
@@ -33,6 +41,8 @@ function App() {
       priority={task.priority}
       done={task.done}
       markDone={() => doneHandler(index)}
+      deleteTask = {() => deleteHandler(index)}
+
 
       
     />
