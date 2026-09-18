@@ -1,4 +1,16 @@
 const Task = (props) => {
+
+    {/*Very simple and messy but works, simple check what priority type is and change accordingly */}
+    let priorityColor = 'green';
+
+    if (props.priority === "high") {
+        priorityColor = "red";
+    }
+
+    if (props.priority === 'medium') {
+
+        priorityColor = 'orange';
+    }
     
     return (
 
@@ -10,7 +22,8 @@ const Task = (props) => {
             <p>{props.children}</p>
             {/*new prop class created here, in same vein as title */}
             <p className ="description">{props.description}</p>  
-            <p className ="priority">{props.priority}</p>
+            <p className ="priority" style={{ color: priorityColor}}>
+            {props.priority}</p>
             <button onClick={props.markDone} className='doneButton'>Done</button>
             <button className='deleteButton' onClick={props.deleteTask}>Delete</button>
 
