@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+>>>>>>> b41be19 (Tasky Lab 3 Done)
 import { v4 as uuidv4 } from 'uuid';
 import AddTaskForm from './components/Form';
 import React, { useState } from 'react';
@@ -5,6 +10,7 @@ import './App.css';
 import Task from './components/Task';
 
 function App() {
+<<<<<<< HEAD
     const [ taskState, setTaskState ] = useState({
     tasks: [
       { id: 1, title:"Dishes", description: "Empty dishwasher", deadline: "Today", priority: "high", done: false },
@@ -17,10 +23,25 @@ function App() {
     const tasks = [...taskState.tasks];
     tasks[taskIndex].done = !tasks[taskIndex].done;
     setTaskState({tasks});
+=======
+  const [taskState, setTaskState] = useState({
+    tasks: [
+      { id: 1, title: "Dishes", description: "Empty dishwasher", deadline: "Today", priority: "high", done: false },
+      { id: 2, title: "Laundry", description: "Fold clothes and put away", deadline: "Tomorrow", priority: "low", done: false },
+      { id: 3, title: "Tidy up", deadline: "Today", priority: "medium", done: false }
+    ]
+  });
+
+  const doneHandler = (taskIndex) => {
+    const tasks = [...taskState.tasks];
+    tasks[taskIndex].done = !tasks[taskIndex].done;
+    setTaskState({ tasks });
+>>>>>>> b41be19 (Tasky Lab 3 Done)
     console.log(`${taskIndex} ${tasks[taskIndex].done}`);
   }
 
 
+<<<<<<< HEAD
     const deleteHandler = (taskIndex) => {
     const tasks = [...taskState.tasks];
     tasks.splice(taskIndex, 1);
@@ -28,12 +49,22 @@ function App() {
   } 
 
     const [ formState, setFormState ] = useState({
+=======
+  const deleteHandler = (taskIndex) => {
+    const tasks = [...taskState.tasks];
+    tasks.splice(taskIndex, 1);
+    setTaskState({ tasks });
+  }
+
+  const [formState, setFormState] = useState({
+>>>>>>> b41be19 (Tasky Lab 3 Done)
     title: "",
     description: "",
     deadline: "",
     priority: "low",
   });
 
+<<<<<<< HEAD
     const formChangeHandler = (event) => {
     let form = {...formState};
 
@@ -53,12 +84,34 @@ function App() {
           break;
       default:
           form = formState;
+=======
+  const formChangeHandler = (event) => {
+    let form = { ...formState };
+
+    switch (event.target.name) {
+      case "title":
+        form.title = event.target.value;
+        break;
+      case "description":
+        form.description = event.target.value;
+        break;
+      case "deadline":
+        form.deadline = event.target.value;
+        break;
+
+      case "priority":
+        form.priority = event.target.value;
+        break;
+      default:
+        form = formState;
+>>>>>>> b41be19 (Tasky Lab 3 Done)
     }
     setFormState(form);
     console.log(formState);
 
   }
 
+<<<<<<< HEAD
     const formSubmitHandler = (event) => {
     event.preventDefault();
 
@@ -93,14 +146,78 @@ function App() {
           <AddTaskForm submit={formSubmitHandler} change={formChangeHandler} />
 
          
+=======
+  const formSubmitHandler = (event) => {
+    event.preventDefault();
+
+    const tasks = [...taskState.tasks];
+    const form = { ...formState };
+
+    form.id = uuidv4();
+
+    tasks.push(form);
+    setTaskState({ tasks });
+  }
+
+
+  return (
+    <div className="container">
+      {/* App Header */}
+      <Container component="main">
+        <Typography
+          component="h1"
+          variant="h2"
+          align="center"
+          gutterBottom
+          sx={{
+            backgroundColor: 'gray',
+            textAlign: 'center',
+            color: 'white',
+            padding: '20px',
+            margin: '20px 0 40px 0',
+            borderRadius: '4px'
+          }}
+        >
+          Tasky
+        </Typography>
+      </Container>
+      {/* End App Header */}
+
+
+      {taskState.tasks.map((task, index) => (
+        <Task
+          title={task.title}
+          description={task.description}
+          deadline={task.deadline}
+          key={task.id}
+          priority={task.priority}
+          done={task.done}
+          markDone={() => doneHandler(index)}
+          deleteTask={() => deleteHandler(index)}
+
+
+
+        />
+      ))}
+      <AddTaskForm submit={formSubmitHandler} change={formChangeHandler} />
+
+
+
+>>>>>>> b41be19 (Tasky Lab 3 Done)
 
 
 
 
+<<<<<<< HEAD
      
     </div>
 
     
+=======
+    </div>
+
+
+>>>>>>> b41be19 (Tasky Lab 3 Done)
   );
 
 }

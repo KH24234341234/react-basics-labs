@@ -4,7 +4,11 @@ body {
   font-weight: 400;
 }
 
+<<<<<<< HEAD
 h1 {
+=======
+/*h1 {
+>>>>>>> b41be19 (Tasky Lab 3 Done)
   text-align: center;
   background-color: grey;
   color: white;
@@ -12,11 +16,19 @@ h1 {
   margin: 8px 0;
   border: none;
   border-radius: 4px;
+<<<<<<< HEAD
 }
 
 div {
   padding: 20px;
 }
+=======
+}*/
+
+/*div {
+  padding: 20px;
+}*/
+>>>>>>> b41be19 (Tasky Lab 3 Done)
 
 .container{
   text-align: center;
@@ -75,7 +87,11 @@ button {
   color: red;
 }
 
+<<<<<<< HEAD
 input[type=text], input[type=date] {
+=======
+/*input[type=text], input[type=date] {
+>>>>>>> b41be19 (Tasky Lab 3 Done)
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -98,7 +114,11 @@ input[type=submit] {
 
 input[type=submit]:hover {
   background-color: #45a049;
+<<<<<<< HEAD
 }
+=======
+}*/
+>>>>>>> b41be19 (Tasky Lab 3 Done)
 
 form {
   text-align: left;
